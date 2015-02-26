@@ -14,7 +14,9 @@ content = gets.chomp
 puts ""
 print "Sending message..."
 
-uri = URI("http://localhost:9292")
+uri = URI("http://localhost:9393")
+
+response = Net::HTTP.post_form(uri, to: to, from: from, content: content)
 
 # TODO: Post the message to the server
 # How do you submit a POST request using Ruby?
